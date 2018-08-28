@@ -1,8 +1,7 @@
-FROM ubuntu:zesty
+FROM hashicorp/terraform:0.10.5
+LABEL maintainer="Your Name, you@org.com"
 
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /terraformbuild
+WORKDIR /terraformbuild
 
-COPY . .
-
-CMD ["printenv"]
+COPY . ./

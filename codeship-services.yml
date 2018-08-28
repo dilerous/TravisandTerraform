@@ -1,6 +1,8 @@
-codeship_example:
-  build:
-    image: codeship_example
-    dockerfile: Dockerfile
-  environment:
-    EXAMPLE_ENV_VAR: example-var
+version: '2'
+services:
+  terraform:
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/terraformbuild
+    encrypted_env_file: secrets.env.encrypted
